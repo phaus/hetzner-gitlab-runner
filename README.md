@@ -1,5 +1,7 @@
 # Auto-scale CI jobs with Gitlab Runner and the Hetzner Docker Machine driver
 
+Fork of [mawalu/hetzner-gitlab-runner](https://github.com/mawalu/hetzner-gitlab-runner).
+
 With this patched GitLab Runner image, you can auto-scale your CI jobs on Hetzner Cloud. The patch installs the [Hetzner Docker Machine driver](https://github.com/JonasProgrammer/docker-machine-driver-hetzner) and is available on [Docker Hub](https://hub.docker.com/r/mawalu/hetzner-gitlab-runner).
 
 You can follow the official [GitLab docs](https://docs.gitlab.com/runner/executors/docker_machine.html) for configuring the GitLab Runner with docker machine, just use this image as a drop in replacement for `gitlab/gitlab-runner`.
@@ -8,7 +10,7 @@ See the example `config.toml` and `docker-compose.yaml` below for the hetzner sp
 
 ## Usage
 
-Use [this image](https://hub.docker.com/r/mawalu/hetzner-gitlab-runner) instead of the `gitlab/gitlab-runner` image and set `MachineDriver` to `hetzner` in your runner configuration.
+Use [this image](https://quay.io/repository/phaus/hetzner-gitlab-runner) instead of the `gitlab/gitlab-runner` image and set `MachineDriver` to `hetzner` in your runner configuration.
 
 Example `config.toml`:
 
@@ -52,7 +54,7 @@ version: "3.8"
 
 services:
   hetzner-runner:
-    image: mawalu/hetzner-gitlab-runner:latest
+    image: quay.io/repository/phaus/hetzner-gitlab-runner:latest
     volumes:
       - "./hetzner_config:/etc/gitlab-runner"
 ```
