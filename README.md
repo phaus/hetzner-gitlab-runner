@@ -10,7 +10,7 @@ See the example `config.toml` and `docker-compose.yaml` below for the hetzner sp
 
 ## Usage
 
-Use [this image](https://quay.io/repository/phaus/hetzner-gitlab-runner) instead of the `gitlab/gitlab-runner` image and set `MachineDriver` to `hetzner` in your runner configuration.
+Use [this image](https://quay.io/phaus/hetzner-gitlab-runner) instead of the `gitlab/gitlab-runner` image and set `MachineDriver` to `hetzner` in your runner configuration.
 
 Example `config.toml`:
 
@@ -54,7 +54,7 @@ version: "3.8"
 
 services:
   hetzner-runner:
-    image: quay.io/repository/phaus/hetzner-gitlab-runner:latest
+    image: quay.io/phaus/hetzner-gitlab-runner:latest
     volumes:
       - "./hetzner_config:/etc/gitlab-runner"
 ```
