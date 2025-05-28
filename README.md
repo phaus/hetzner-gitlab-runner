@@ -42,8 +42,8 @@ check_interval = 0
     MachineName = "runner-%s"
     MachineOptions = [
       "hetzner-api-token=hetzner-api-token",
-      "hetzner-image=ubuntu-18.04",
-      "hetzner-server-type=cx31",
+	    "hetzner-image=ubuntu-20.04",
+	    "hetzner-server-type=cx32",
     ]
 ```
 
